@@ -11,10 +11,10 @@ apollo_portal_db_username='admin'
 apollo_portal_db_password='1RNbTI@m$zIE114s'
 
 # meta server url, different environments should have different meta server addresses
-dev_meta=http://apollo-config.example.com
-fat_meta=http://apollo-config.example.com
-uat_meta=http://apollo-config.example.com
-pro_meta=http://apollo-config.example.com
+dev_meta=http://dev.meta.apollo.com
+test_meta=http://test.meta.apollo.com
+pre_meta=http://pre.meta.apollo.com
+pro_meta=http://pro.meta.apollo.com
 
 META_SERVERS_OPTS="-Ddev_meta=$dev_meta -Dfat_meta=$fat_meta -Duat_meta=$uat_meta -Dpro_meta=$pro_meta"
 
@@ -38,11 +38,13 @@ mvn clean package -DskipTests -pl apollo-portal -am -Dapollo_profile=github,auth
 echo "==== building portal finished ===="
 
 echo "==== start dist jar ===="
+basepath=$(cd `dirname $0`;cd ../; pwd)
 version=1.6.0-SNAPSHOT
 modules=(apollo-configservice apollo-adminservice  apollo-portal)
 for module in ${modules[@]}
 do
-cp $module/target/$module-$version.jar ./dist
+cp $basepath/$module/target/$module-$version.jar ./dist
 done
 
-cp ./scripts/startup.sh ./dist
+cp $basepath/scripts/*.sh $basepath/dist
+chmod u+x $basepath/dist/*.sh

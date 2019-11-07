@@ -21,10 +21,16 @@ public final class EnvUtils {
         return Env.PRO;
       case "DEV":
         return Env.DEV;
+      case "TEST":
+        return Env.TEST;
       case "LOCAL":
         return Env.LOCAL;
       case "TOOLS":
         return Env.TOOLS;
+      case "PRE":
+          return Env.PRE;
+      case "GRAY":
+          return Env.GRAY;
       default:
         return Env.UNKNOWN;
     }

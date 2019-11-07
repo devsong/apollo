@@ -11,6 +11,7 @@ public class NullProviderManager implements ProviderManager {
     return defaultValue;
   }
 
+  @SuppressWarnings({ "rawtypes", "unchecked" })
   @Override
   public NullProvider provider(Class clazz) {
     return provider;

@@ -17,7 +17,6 @@ public class ResourceUtils {
   private static final Logger logger = LoggerFactory.getLogger(ResourceUtils.class);
   private static final String[] DEFAULT_FILE_SEARCH_LOCATIONS = new String[]{"./config/", "./"};
 
-  @SuppressWarnings("unchecked")
   public static Properties readConfigFile(String configPath, Properties defaults) {
     Properties props = new Properties();
     if (defaults != null) {
