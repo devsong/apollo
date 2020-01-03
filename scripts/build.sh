@@ -1,14 +1,14 @@
 #!/bin/sh
 
 # apollo config db info
-apollo_config_db_url='jdbc:mysql://127.0.0.1:3306/ApolloConfigDB?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&zeroDateTimeBehavior=convertToNull'
-apollo_config_db_username='admin'
-apollo_config_db_password='1RNbTI@m$zIE114s'
+apollo_config_db_url='jdbc:mysql://10.160.81.18:6001/ApolloConfigDB?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&zeroDateTimeBehavior=convertToNull'
+apollo_config_db_username='tester'
+apollo_config_db_password='nopass.2'
 
 # apollo portal db info
-apollo_portal_db_url='jdbc:mysql://127.0.0.1:3306/ApolloPortalDB?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&zeroDateTimeBehavior=convertToNull'
-apollo_portal_db_username='admin'
-apollo_portal_db_password='1RNbTI@m$zIE114s'
+apollo_portal_db_url='jdbc:mysql://10.160.81.18:6001/ApolloPortalDB?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&zeroDateTimeBehavior=convertToNull'
+apollo_portal_db_username='tester'
+apollo_portal_db_password='nopass.2'
 
 # meta server url, different environments should have different meta server addresses
 dev_meta=http://dev.meta.apollo.com

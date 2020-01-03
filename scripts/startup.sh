@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JAVA_OPTS="-server -Xms512m -Xmx512m -XX:NewSize=128m -XX:MaxNewSize=256m -Xss512k"
+JAVA_OPTS="-server -Xms64m -Xmx64m -XX:NewSize=32m -XX:MaxNewSize=32m -Xss512k"
 
 source /etc/profile
 basepath=$(cd `dirname $0`; pwd)
@@ -51,9 +51,9 @@ function check_pid() {
 function start(){
 	check_pid
 	jarfile="$module-$version.jar"
-	
+
 	nohup java $JAVA_OPTS -jar $jarfile >> ${logfile} 2>&1 & pid=$!
-	
+
 	echoGreen "$module starting "
 	for e in $(seq 10); do
 	    echoGreen " $e"
