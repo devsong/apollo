@@ -12,7 +12,7 @@ apollo_portal_db_password='1RNbTI@m$zIE114s'
 
 # meta server url, different environments should have different meta server addresses
 dev_meta=http://dev.meta.apollo.com
-test_meta=http://test.meta.apollo.com
+test_meta=http://dev.meta.apollo.com
 pre_meta=http://pre.meta.apollo.com
 pro_meta=http://pro.meta.apollo.com
 

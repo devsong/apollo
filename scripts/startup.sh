@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JAVA_OPTS="-server -Xms64m -Xmx64m -XX:NewSize=32m -XX:MaxNewSize=32m -Xss512k"
+JAVA_OPTS="-server -Xms256m -Xmx256m -XX:NewSize=32m -XX:MaxNewSize=64m -Xss512k"
 
 source /etc/profile
 basepath=$(cd `dirname $0`; pwd)
@@ -94,7 +94,7 @@ function backup() {
     cd $APP_HOME/..
     tar -zcf $app-`date +'%Y%m%d%H%M'`.tar.gz $app --exclude=$app/logs
     mv $app-`date +'%Y%m%d%H%M'`.tar.gz $bakdir
-    echoGreen "$app deploy success, is $app-`date +'%Y%m%d%H%M'`.tar.gz"
+    echoGreen "$app backup success, is $app-`date +'%Y%m%d%H%M'`.tar.gz"
 }
 
 function main {
